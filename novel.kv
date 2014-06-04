@@ -1,0 +1,49 @@
+<Novel>:
+    Label:
+        id: background
+        canvas.before:
+            Color:
+                rgba: 1, 1, 1, 1
+            Rectangle:
+                source: root.current_background
+                pos: self.pos
+                size: self.size
+    BoxLayout:
+        padding: 15
+        Label:
+            size_hint: 0.45, 1
+            canvas.before:
+                Color:
+                    rgba: 1, 1, 1, 1
+                Rectangle:
+                    source: root.left_character_image
+                    pos: self.pos
+                    size: self.size
+        Label:
+            size_hint: 0.1, 1
+            text: root.centertext
+        Label:
+            size_hint: 0.45, 1
+            canvas.before:
+                Color:
+                    rgba: 1, 1, 1, 1
+                Rectangle:
+                    source: root.right_character_image
+                    pos: self.pos
+                    size: self.size
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 25
+        Label:
+            size_hint: 1, 0.625
+        Label:
+            id: textbox
+            size_hint: 1, 0.375
+            text: root.textbox_text
+            canvas.before:
+                Color:
+                    rgba: 1, 1, 1, 1
+                Rectangle:
+                    source: root.text_box_image
+                    pos: self.pos
+                    size: self.size

@@ -1,0 +1,20 @@
+character Janitoria ./data/character1.png
+character Dr._Figur ./data/character2.png
+
+background background ./data/background2.png
+
+set_background background
+character_left Janitoria
+character_right Dr._Figur
+Janitoria Dr. Figur, please... whats this?
+Dr._Figur What do you mean my dear?
+Janitoria I mean all this mess. What is this stuff?
+Dr._Figur Oh this... i think this must be a part of a liver
+Dr._Figur And that seems like a bit of brain...
+Dr._Figur Well, and a lot of blood of course
+Janitoria It looks like a slaughterhouse.
+Janitoria What was the patients problem?
+Dr._Figur He had a broken toe nail.
+Janitoria WHAT?
+Janitora Thats insane...
+end

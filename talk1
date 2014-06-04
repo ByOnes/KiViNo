@@ -1,0 +1,83 @@
+# This is an example file for KiViNo (Kivy Visual Novel Engine)
+# It contains many explanations an examples on how to write your own scripts
+# Currently its possible to have two characters speaking, with sound and background images and stuff
+# characters can only have one image, this will change soon
+
+# <- This is a comment
+# a line always starts with a keyword, followed by some arguments
+
+# KEYWORDS:
+# character -> creates a new character
+# music -> path to music that is played, does loop, set again changes the music (file must be .ogg)
+# background -> name and path to background image (file should be .png)
+# sound -> path to sound effect that should be played, only played once
+
+# character_left -> creates a new character with name, path to an image on the left, existing character will be removed
+# character_right -> like left, only on the right side
+# remove -> removes character on the left or right
+# text -> show text in the textbox, without highlighting a character
+# centertext -> show text in the middle
+# $charactername$ -> just enter a character name an his text, the character has to be on the left or the right
+# set_background
+# play_music
+# play_sound
+# end -> end this act, scene or chapter. removes all entities
+
+
+# Example script:
+# Conversation between a fish and a janitor about all the rubbish
+
+# Initialisation: Load all the need resources for this scenario
+# It is not needed to load them now, but its easier to maintain
+# And when everything is loaded before, you eliminate potential hiccups at runtime
+# Just think of a drama where all people are introduced in the beginning
+
+character Janitoria ./data/character1.png
+character Dr._Figur ./data/character2.png
+character Brain ./data/character3.png
+
+background background1 ./data/background.png
+background background2 ./data/background2.png
+background background3 ./data/background_black.png
+
+music background ./data/elevatormusic.ogg
+
+sound hmm ./data/hmm.ogg
+sound sigh ./data/sigh3.ogg
+sound splatter ./data/splatter.ogg
+sound yeah ./data/yeah.ogg
+
+# Screenplay: define which person says what, lift and close the curtain
+
+set_background background1
+play_music background
+text Just a normal day at the hospital.
+character_left Janitoria
+Janitoria Hmm... all this mess...
+Janitoria Can't these doctors clean... dirty bunch
+Janitoria Uh... theres something fishy here
+character_right Dr._Figur
+play_sound hmm
+Dr._Figur Uhm, excuse me?
+Janitoria Oh, sorry Dr._Figur. I did not see you!
+Dr._Figur No Problem my dear. Is there something that troubles you?
+Janitoria Nooonooo, everythings soooo fine! Can't be greater! I swear!
+Dr._Figur Okay, my dear. I'll continue with my next patient.
+Dr._Figur I hope that this time the liver will not explode again...
+remove right
+play_sound sigh
+Janitoria Gosh... Seems like im getting more work to do.
+play_sound splatter
+Janitoria ...
+Janitoria Yes, thats our doctor. Keeping up the good work...
+remove left
+set_background background2
+text Meanwhile in the surgeon room...
+character_right Brain
+Brain Finaly! Freedome, here i come.
+play_sound yeah
+Brain YAAAYYYY!!!
+remove right
+set_background background3
+centertext The End!
+end
